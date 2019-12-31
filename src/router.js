@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Register from './views/Register.vue'
+import Login from './views/Login.vue'
+import Personal from './views/Personal.vue'
+import HomePage from './views/HomePage.vue'
+import Operation from './views/Operation.vue'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
@@ -10,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'homepage',
+      component: HomePage
     },
     {
       path: '/about',
@@ -20,6 +25,31 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/personal',
+      name: 'personal',
+      component: Personal
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/operation',
+      name: 'operation',
+      component: Operation
+    },
+    {
+      path: '/base',
+      name: 'base',
+      component: Home
     }
   ]
 })
